@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mockaroo:
+    container_name: mockaroo
+    image: stephlocke/mockaroo
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: mockaroo
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+    command: ["python", "-u","python/mockaroo_consumer.py"]
+
+
+
+networks:
+  default:
+    external: True
+    name: kafka-network

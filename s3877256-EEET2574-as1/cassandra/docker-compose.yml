@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  cassandradb:
+    container_name: cassandra
+    image: bootstrapcassandra
+    build: .
+    ports:
+      - 7000:7000
+      - 9001:9001
+    volumes:
+      - $PWD/cassandra/data:/var/lib/cassandra
+      - $PWD/cassandra/cassandra.yml:/etc/cassandra/cassandra.yml
+networks:
+  default:
+    external:
+      name: cassandra-network
