@@ -1,4 +1,4 @@
-# cosc-pipeline
+# Bigdata-pipeline
 This is the repository for as1 Rmit BigData course. This guideline help you to walkthrough the process of setting up Docker containers for kafka and cassandra to create a data pipeline 
 
 ### Tools: 
